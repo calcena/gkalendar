@@ -85,6 +85,7 @@ Public Sub FechaSemanaSanta(Anyo As Integer, Optional ssFechaSanta As Integer)
     conn.Exec("insert into festivos (dia,mes,descripcion,festivo_calculado) values ('" & dato[1] & "','" & dato[0] & "','Setmana Santa','+')")
   Next
   
+  '
   For i = 4 To 4 
     dato = (Split(resultado[i], "/"))
     'Insertamos los festivos de la semana santa calculada

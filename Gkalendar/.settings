@@ -1,6 +1,5 @@
 [Bookmarks]
 Inicio=[8464,8466]
-gSemanaSanta=[]
 
 [Breakpoints]
 Count=0
@@ -92,7 +91,7 @@ Count=3
 File[1]=".src/Inicio.form"
 Active=3
 File[2]=".src/Inicio.class:12.9665"
-File[3]=".src/gSemanaSanta.module:17.93"
+File[3]=".src/gSemanaSanta.module:3.87"
 
 [Watches]
 Count=6
