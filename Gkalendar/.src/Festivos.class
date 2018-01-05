@@ -1,0 +1,36 @@
+' Gambas class file
+
+Public Sub Init()
+  
+  Dim Numero_fila As Integer 
+  
+  gvFestivos.Columns.count = 3
+  gvFestivos.Header = 3  
+  gvFestivos.columns[0].title = ""
+  gvFestivos.columns[1].title = "Fecha"
+  gvFestivos.columns[2].title = "Descripción"
+  gvFestivos.Columns[0].Width = 15
+  gvFestivos.Columns[1].Width = 100   
+  gvFestivos.Columns[0].Width = 150
+  '
+  Numero_fila = gvFestivos.Rows.Count
+  gvFestivos.Rows.Insert(numero_fila, 1)
+  gvFestivos[Numero_fila, 0].Text = "id_1"
+  gvFestivos[Numero_fila, 1].Text = "25/05/2017"
+  gvFestivos[Numero_fila, 2].Text = "Ejemplo 1"
+  gvFestivos.Rows.Insert(numero_fila, 1)
+  gvFestivos[Numero_fila, 0].Text = "id_2"
+  gvFestivos[Numero_fila, 1].Text = "26/05/2017"
+  gvFestivos[Numero_fila, 2].Text = "Ejemplo 2"
+  
+End
+
+Public Sub Form_Open()
+  
+  Init()
+  
+End
+
+Public Sub gvFestivos_Click()
+  
+End

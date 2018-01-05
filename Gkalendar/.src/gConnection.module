@@ -1,0 +1,30 @@
+' Gambas module file
+
+Private conectar As Connection
+
+Public Sub ConectarDb() As Connection
+  
+  conectar = New Connection
+  conectar.Host = User.Home &/ ".gKalendar"
+  conectar.name = "jKalendar"
+  conectar.type = "sqlite3"
+  Try conectar.Open()   
+  Return conectar
+  If Error Then
+    conectar = Null
+    Message.Error(" Error al conectar con la DB")
+    
+  Endif
+  
+End
+
+Public Sub CerrarDb()   
+  
+  Try conectar.Close()
+  conectar = Null
+  If Error Then
+    conectar = Null
+    Message.Error("Error al cerrar la DB")  
+  Endif 
+  
+End

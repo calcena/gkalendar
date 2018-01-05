@@ -1,0 +1,17 @@
+' Gambas module file
+
+'NOTE: Constantes para idioma Español
+Public Const informe_1_sp As String = "Ene - Feb - Jul - Ago"
+Public Const informe_2_sp As String = "Mar - Abr - Sep - Oct"
+Public Const informe_3_sp As String = "May - Jun - Nov - Dic"
+'NOTE: Constantes para idioma Català
+Public Const informe_1_cat As String = "Gen - Feb - Jul - Ago"
+Public Const informe_2_cat As String = "Mar - Abr - Set - Oct"
+Public Const informe_3_cat As String = "Mai - Jun - Nov - Dec"
+'NOTE: Constantes para el aviso de generación de calendarios
+Public Const warning_esperando_sp As String = "Generando calendarios..."
+Public Const warning_esperando_cat As String = "Generant calendaris..."
+'NOTE: 
+Public Const strPlantilla As String = ".src/Informes/plantilla.dia"
+Public Const strDia As String = ".gKalendar/Informes/calendario.dia"
+Public Const strPDF As String = ".gKalendar/Informes/calendario.pdf"

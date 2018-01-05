@@ -1,0 +1,13 @@
+' Gambas module file
+
+Public Function es_bisiesto(anio As Integer) As Integer  
+  
+  If (anio Mod 4 = 0 And anio Mod 100 <> 0 Or anio Mod 400 = 0) Then
+    ' Año Bisiesto 29 días
+    Return 29
+  Else
+    ' Año No bisiesto 28 días
+    Return 28
+  Endif  
+  
+End

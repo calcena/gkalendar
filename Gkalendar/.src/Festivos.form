@@ -1,0 +1,37 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,88,35)
+  { gvFestivos GridView
+    MoveScaled(31,2,56,20)
+  }
+  { DateChooser1 DateChooser
+    MoveScaled(1,2,29,20)
+  }
+  { btnAdd Button
+    MoveScaled(11,29,13,4)
+    Text = ("Añadir")
+    Picture = Picture["icon:/32/add"]
+  }
+  { txtDia TextBox
+    MoveScaled(1,23,13,4)
+  }
+  { txtDescripcion TextBox
+    MoveScaled(31,23,56,4)
+  }
+  { btnAdd2 Button
+    MoveScaled(25,29,13,4)
+    Text = ("Borrar")
+    Picture = Picture["icon:/32/remove"]
+  }
+  { btnAdd3 Button
+    MoveScaled(39,29,13,4)
+    Text = ("Editar")
+    Picture = Picture["icon:/32/edit"]
+  }
+  { btnAdd4 Button
+    MoveScaled(70,29,13,4)
+    Text = ("Salir")
+    Picture = Picture["icon:/32/quit"]
+  }
+}

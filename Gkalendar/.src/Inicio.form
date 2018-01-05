@@ -1,0 +1,70 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,53,31)
+  { TextLabel1 TextLabel
+    MoveScaled(2,3,12,8)
+    Font = Font["40"]
+    Text = ("Año")
+  }
+  { txtAnyo TextBox
+    MoveScaled(15,4,18,7)
+    Font = Font["40"]
+    Alignment = Align.Center
+    Border = False
+  }
+  { btnAceptar Button
+    MoveScaled(35,5,7,6)
+    Picture = Picture["img/aceptar.png"]
+  }
+  { btnPrimero Button
+    MoveScaled(1,19,23,5)
+    Visible = False
+    Picture = Picture["img/impresion.png"]
+  }
+  { btnSegundo Button
+    MoveScaled(25,19,23,5)
+    Visible = False
+    Picture = Picture["img/impresion.png"]
+  }
+  { btnTercero Button
+    MoveScaled(13,25,23,5)
+    Visible = False
+    Picture = Picture["img/impresion.png"]
+  }
+  { rdbSp RadioButton
+    MoveScaled(9,13,6,4)
+  }
+  { pbEsp PictureBox
+    MoveScaled(12,13,4,4)
+    Picture = Picture["img/es.png"]
+    Stretch = True
+  }
+  { Button1 Button
+    MoveScaled(46,1,6,5)
+    Picture = Picture["img/config.png"]
+  }
+  { rdbCat RadioButton
+    MoveScaled(20,13,6,4)
+  }
+  { pbCat PictureBox
+    MoveScaled(23,13,4,4)
+    Picture = Picture["img/cat.png"]
+    Stretch = True
+  }
+  { Button2 Button
+    MoveScaled(46,7,6,5)
+    Picture = Picture["img/festivos.png"]
+  }
+  { Button3 Button
+    MoveScaled(46,13,6,5)
+    Picture = Picture["img/exit.png"]
+  }
+  { txtTrabajo TextLabel
+    MoveScaled(3,0,41,4)
+    Visible = False
+    Font = Font["Italic,16"]
+    Foreground = Color.Blue
+    Alignment = Align.Center
+  }
+}

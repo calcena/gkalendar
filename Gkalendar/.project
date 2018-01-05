@@ -1,0 +1,25 @@
+# Gambas Project File 3.0
+# Compiled with Gambas 3.10.0
+Title=Gkalendar
+Startup=Inicio
+Version=1.0.2
+Component=gb.image
+Component=gb.gui.qt
+Component=gb.form
+Component=gb.chart
+Component=gb.db
+Component=gb.db.sqlite3
+Component=gb.desktop.x11
+Component=gb.desktop
+Component=gb.report2
+TabSize=2
+Language=en_US
+Maintainer=dina
+Address=dina@dina-laptop
+License=General Public License
+PackageName=gkalendar-1.0.2
+Packager=1
+Systems=ubuntu
+Menus=ubuntu:"Applications/Education"
+Categories=ubuntu:"Education"
+Groups=ubuntu:"utils"

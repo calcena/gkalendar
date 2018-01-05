@@ -1,0 +1,100 @@
+' Gambas module file
+
+Public Const ssDomingoResurreccion As Integer = 0
+Public Const ssMiercolesCeniza As Integer = -46
+Public Const ssDomingoRamos As Integer = -7
+Public Const ssAscension As Integer = 40
+Public Const ssDomingoAscension As Integer = 43
+Public Const ssPentecostes As Integer = 50
+Public Const ssSantisimaTrinidad As Integer = 57
+Public Const ssCorpusChristi As Integer = 61
+Public Const ssDomingoCorpusChristi As Integer = 64
+Public resDomingo As String
+Public resultado As New String[]
+
+Public resultadoFinal As Date 
+Public viernesSS As Date
+Public lunesSS As Date
+
+Public Function DomingoResurreccion(Anyo As Integer) As Date
+  
+  Dim a As Integer, b As Integer, c As Integer, d As Integer, e As Integer
+  Dim f As Integer, g As Integer, h As Integer, i As Integer
+  Dim k As Integer, l As Integer, m As Integer, n As Integer
+  Dim mes As Integer, dia As Integer
+  
+  a = Anyo Mod 19
+  b = Int(Anyo / 100)
+  c = Anyo Mod 100
+  d = Int(b / 4)
+  e = b Mod 4
+  f = Int((b + 8) / 25)
+  g = Int((b - f + 1) / 3)
+  h = (19 * a + b - d - g + 15) Mod 30
+  i = Int(c / 4)
+  k = c Mod 4
+  l = (32 + 2 * e + 2 * i - h - k) Mod 7
+  m = Int((a + 11 * h + 22 * l) / 451)
+  n = h + l - 7 * m + 114
+  mes = Int(n / 31)
+  dia = 1 + n Mod 31
+  resDomingo = mes & "/" & dia & "/" & Anyo
+  Return CDate(resDomingo)
+  
+End Function
+
+Public Sub FechaSemanaSanta(Anyo As Integer, Optional ssFechaSanta As Integer)
+  'Si se omite ssFechaSanta se asume ssMiércolesCeniza = 0
+  ' valor temporal
+  
+  Dim conn As Connection
+  Dim valTemp As String 
+  Dim i As Integer
+  
+  Dim dato As New String[]
+  
+  resultadoFinal = DomingoResurreccion(Anyo) + ssFechaSanta
+  
+  ' Viernes
+  valTemp = CDate(resultadoFinal - 2)
+  resultado.Add(valTemp)
+  
+  ' Sabado
+  valTemp = CDate(resultadoFinal - 1)
+  resultado.Add(valTemp)
+  
+  ' Domingo
+  valTemp = resultadoFinal
+  resultado.Add(valTemp)
+  
+  ' Lunes
+  valTemp = CDate(resultadoFinal + 1)
+  resultado.Add(valTemp)
+  
+  ' Pentecotes 
+  valTemp = CDate(resultadoFinal + 50)
+  resultado.Add(valTemp)
+  
+  conn = gConnection.ConectarDb()
+  'Borramos los festivos de Semana Santa
+  conn.Exec("delete from festivos where festivo_calculado = '+'") 
+  '
+  For i = 0 To 3
+    dato = (Split(resultado[i], "/"))
+    'Insertamos los festivos de la semana santa calculada
+    conn.Exec("insert into festivos (dia,mes,descripcion,festivo_calculado) values ('" & dato[1] & "','" & dato[0] & "','Setmana Santa','+')")
+  Next
+  
+  For i = 4 To 4 
+    dato = (Split(resultado[i], "/"))
+    'Insertamos los festivos de la semana santa calculada
+    conn.Exec("insert into festivos (dia,mes,descripcion,festivo_calculado) values ('" & dato[1] & "','" & dato[0] & "','Pentecostes','+')")
+  Next
+  
+  resultado.clear
+  dato.Clear
+  
+  ' Commiteamos los datos insertados
+  conn.Commit
+  
+End Sub
